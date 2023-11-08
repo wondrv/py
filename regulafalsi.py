@@ -46,6 +46,8 @@ for row in table:
 # Mencetak akar yang ditemukan setelah iterasi selesai
 print("\nRoot of the equation: {:.3f}".format(root))
 
+#Output
+
 #| Iteration |   a   |   b   |   c   |  f(a)  |  f(b) |  f(c)  |
 #|-----------|-------|-------|-------|--------|-------|--------|
 #|     1     | 3.000 | 6.000 | 4.333 | -4.000 | 5.000 | -2.222 |
