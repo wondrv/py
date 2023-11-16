@@ -41,10 +41,10 @@ x1 = x0 - f(x0) / f'(x0)
 Dalam kasus ini, kita dapat memilih titik awal x0 = 1. Nilai fungsi f(x0) = 2 dan nilai turunan pertama f'(x0) = 3x2 - 1.
 
 Berikut adalah tabel iterasi penyelesaian persamaan non linier menggunakan metode Newton-Raphson:
-Iterasi	x	      f(x)	       f'(x)	         x1
-0	   | 1	            |   2	     |  3	    |   -0.1667
-1	   | -0.1667   |	0.6667  |	2.25	    |    0.0833
-2	   | 0.0833    |	0.0278  |	0.0282 |	0.0833
+Iterasi	x	         f(x)	       f'(x)	     x1
+0	   | 1	       |   2	     |  3	      |   -0.1667
+1	   | -0.1667   |	0.6667   |	2.25	  |    0.0833
+2	   | 0.0833    |	0.0278   |	0.0282  |	0.0833
 
 
 1. Persamaan Non Linier
