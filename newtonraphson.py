@@ -1,3 +1,6 @@
+""" Untuk penjelasan atau jawaban 
+lainnya ada di titik 3 di atas pak"""
+
 import numpy as np
 
 def newton_raphson(f, f_prime, x0):
