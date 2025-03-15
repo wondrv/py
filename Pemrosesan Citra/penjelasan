@@ -1,0 +1,43 @@
+### Penjelasan Masing-masing Metode dan Kondisi Input/Output:
+
+1.  Citra Negatif 
+   -  Input : Gambar RGB (uint8, rentang 0-255)
+   -  Proses : Mengurangkan nilai piksel dari 255 (L - s(x,y))
+   -  Output : Gambar RGB dengan warna terbalik
+   -  Kondisi : Mengubah gambar terang menjadi gelap dan sebaliknya
+
+2.  Transformasi Log 
+   -  Input : Gambar RGB (uint8, rentang 0-255)
+   -  Proses : s = c * log(1 + r), c adalah konstanta skala
+   -  Output : Gambar RGB dengan kontras diperbesar pada area gelap
+   -  Kondisi : Meningkatkan detail di area gelap tanpa terlalu memengaruhi area terang
+
+3.  Transformasi Power Law (Gamma) 
+   -  Input : Gambar RGB (uint8, rentang 0-255)
+   -  Proses : s = c * r^γ, γ adalah nilai gamma (misal 0.5)
+   -  Output : Gambar RGB dengan penyesuaian kontras
+   -  Kondisi : γ < 1 mencerahkan, γ > 1 menggelapkan
+
+4.  Histogram Equalization 
+   -  Input : Gambar RGB (dikonversi ke grayscale)
+   -  Proses : Menyebarkan intensitas piksel berdasarkan CDF histogram
+   -  Output : Gambar grayscale dengan kontras maksimal
+   -  Kondisi : Meningkatkan kontras global secara otomatis
+
+5.  Histogram Normalization 
+   -  Input : Gambar RGB (dikonversi ke grayscale)
+   -  Proses : Menskalakan nilai piksel ke rentang 0-255
+   -  Output : Gambar grayscale dengan rentang intensitas penuh
+   -  Kondisi : Menormalkan distribusi intensitas tanpa mengubah bentuk histogram
+
+6.  Konversi RGB ke HSI (Opsional) 
+   -  Input : Gambar RGB (uint8, rentang 0-255)
+   -  Proses : Mengkonversi ke ruang warna HSI (Hue, Saturation, Intensity)
+   -  Output : 3 channel terpisah (H: 0-360°, S: 0-255, I: 0-255)
+   -  Kondisi : Memisahkan informasi warna, saturasi, dan kecerahan
+
+### Cara Menentukan Thresholding pada HSI:
+-  Hue (H) : Threshold pada rentang sudut tertentu (misal 0-30° untuk merah)
+-  Saturation (S) : Threshold untuk tingkat kepekatan warna (misal >100 untuk warna kuat)
+-  Intensity (I) : Threshold untuk kecerahan (misal >128 untuk area terang)
+-  Contoh : Untuk mendeteksi warna merah terang: H(0-30°), S(>100), I(>128)
